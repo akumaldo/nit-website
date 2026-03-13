@@ -1,7 +1,5 @@
 .footer {
-  background: rgba(6, 13, 31, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--bg-dark);
   padding: 64px 0 28px;
   position: relative;
   overflow: hidden;

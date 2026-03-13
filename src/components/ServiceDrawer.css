@@ -1,7 +1,7 @@
 .drawer-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1000;
 }
 
@@ -12,10 +12,7 @@
   bottom: 0;
   width: 520px;
   max-width: 100%;
-  background: rgba(6, 13, 31, 0.95);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-left: 1px solid rgba(59, 130, 246, 0.1);
+  background: var(--bg);
   z-index: 1001;
   overflow-y: auto;
   padding: 48px 36px 36px;
@@ -31,7 +28,7 @@
   align-items: center;
   justify-content: center;
   border: none;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-muted);
   border-radius: 10px;
   cursor: pointer;
   color: var(--text-secondary);
@@ -39,8 +36,8 @@
 }
 
 .drawer__close:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--border);
+  color: var(--text);
 }
 
 .drawer__category {
@@ -49,7 +46,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--nit-blue-light);
+  color: var(--nit-blue);
   margin-bottom: 12px;
   display: inline-block;
 }
@@ -59,18 +56,18 @@
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 16px;
 }
 
 .drawer__intro {
   font-size: 0.95rem;
   font-weight: 400;
-  color: var(--nit-blue-light);
+  color: var(--nit-blue);
   line-height: 1.6;
   margin-bottom: 24px;
   padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border);
 }
 
 .drawer__text {
@@ -84,27 +81,27 @@
 .drawer__section {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid var(--border-light);
 }
 
 .drawer__section-title {
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 16px;
 }
 
 .drawer__item {
   margin-bottom: 20px;
   padding-left: 16px;
-  border-left: 2px solid rgba(59, 130, 246, 0.15);
+  border-left: 2px solid var(--nit-blue-wash);
 }
 
 .drawer__item-name {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 4px;
 }
 
