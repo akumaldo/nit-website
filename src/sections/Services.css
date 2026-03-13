@@ -1,5 +1,10 @@
 .services {
-  background: var(--bg-soft);
+  background: rgba(6, 13, 31, 0.6);
+  transition: background-color 0.8s ease;
+}
+
+.services.section--active {
+  background: rgba(6, 13, 31, 0.9);
 }
 
 .services__tabs {
@@ -9,12 +14,14 @@
 }
 
 .services__tab {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-muted);
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: rgba(6, 13, 31, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 10px;
   padding: 10px 20px;
   cursor: pointer;
@@ -26,14 +33,14 @@
 
 .services__tab:hover {
   color: var(--text-secondary);
-  border-color: var(--nit-blue-muted);
+  border-color: rgba(59, 130, 246, 0.2);
 }
 
 .services__tab--active {
-  color: var(--nit-blue);
-  background: rgba(59, 130, 246, 0.06);
-  border-color: rgba(59, 130, 246, 0.2);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.06);
+  color: var(--nit-blue-light);
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
 }
 
 .services__cat-desc {
@@ -51,8 +58,10 @@
 }
 
 .services__card {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: rgba(6, 13, 31, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 16px;
   padding: 32px 28px;
   cursor: pointer;
@@ -72,8 +81,8 @@
 }
 
 .services__card:hover {
-  border-color: rgba(59, 130, 246, 0.2);
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08), 0 0 0 1px rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12), 0 0 0 1px rgba(59, 130, 246, 0.08);
   transform: translateY(-4px);
 }
 
@@ -88,8 +97,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 13px;
-  background: rgba(59, 130, 246, 0.06);
-  color: var(--nit-blue);
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--nit-blue-light);
   margin-bottom: 20px;
   transition: all 0.3s ease;
 }
@@ -97,14 +106,14 @@
 .services__card:hover .services__card-icon {
   background: var(--nit-blue);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
 }
 
 .services__card-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--text);
+  font-weight: 600;
+  color: #fff;
   margin-bottom: 8px;
 }
 
@@ -116,9 +125,10 @@
 }
 
 .services__card-more {
+  font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--nit-blue);
+  color: var(--nit-blue-light);
   margin-top: 16px;
   display: inline-flex;
   align-items: center;

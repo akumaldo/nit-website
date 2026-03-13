@@ -1,7 +1,12 @@
 .contact {
-  background: var(--bg-dark);
+  background: rgba(6, 13, 31, 0.7);
   position: relative;
   overflow: hidden;
+  transition: background-color 0.8s ease;
+}
+
+.contact.section--active {
+  background: rgba(6, 13, 31, 0.92);
 }
 
 /* Gradient glow */
@@ -13,7 +18,7 @@
   transform: translateX(-50%);
   width: 800px;
   height: 400px;
-  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.1), transparent 70%);
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.15), transparent 70%);
   pointer-events: none;
 }
 
@@ -45,6 +50,8 @@
   gap: 16px;
   padding: 20px 24px;
   background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
   flex: 1;
@@ -77,6 +84,7 @@
 
 .contact__ch-label {
   display: block;
+  font-family: var(--font-heading);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.1em;

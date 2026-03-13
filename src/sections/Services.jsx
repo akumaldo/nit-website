@@ -6,7 +6,6 @@ import {
   Target, ArrowsClockwise, Kanban,
   MagnifyingGlass, ChartBar, Package,
 } from '@phosphor-icons/react';
-import { useInView } from '../hooks/useInView';
 import serviceDetails from '../data/serviceDetails';
 import ServiceDrawer from '../components/ServiceDrawer';
 import './Services.css';
@@ -47,31 +46,22 @@ const categories = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
-
 export default function Services() {
   const [active, setActive] = useState('inovacao');
   const [drawerService, setDrawerService] = useState(null);
-  const [ref, inView] = useInView({ threshold: 0.06 });
   const cat = categories.find((c) => c.id === active);
 
   return (
-    <section id="servicos" className="services section" ref={ref}>
+    <section id="servicos" className="services section">
       <div className="container">
-        <motion.span className="section-label" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={0}>
+        <span className="section-label" data-reveal data-reveal-delay="0">
           Produtos & Serviços
-        </motion.span>
-        <motion.h2 className="section-title" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={1}>
+        </span>
+        <h2 className="section-title" data-reveal data-reveal-delay="1">
           Soluções que geram<br /><em>resultados reais</em>
-        </motion.h2>
+        </h2>
 
-        <motion.div className="services__tabs" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={2}>
+        <div className="services__tabs" data-reveal data-reveal-delay="2">
           {categories.map((c) => (
             <button
               key={c.id}
@@ -82,7 +72,7 @@ export default function Services() {
               {c.label}
             </button>
           ))}
-        </motion.div>
+        </div>
 
         <AnimatePresence mode="wait">
           <motion.div

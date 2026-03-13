@@ -1,6 +1,6 @@
 /* ===== NIT Brasil — Deep Immersive Tech ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Satoshi:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Brand */
@@ -21,25 +21,31 @@
   --bg-dark: #060d1f;
   --bg-dark-soft: #0c1a3a;
 
+  /* Glassmorphism */
+  --glass-bg: rgba(6, 13, 31, 0.55);
+  --glass-border: rgba(59, 130, 246, 0.15);
+  --glass-blur: 20px;
+
   /* Text */
-  --text: #0f172a;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
   --text-accent: var(--nit-blue);
   --text-on-dark: #e2e8f0;
   --text-on-dark-muted: #94a3b8;
 
   /* Borders */
-  --border: #e2e8f0;
-  --border-light: #f1f5f9;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.05);
   --border-dark: rgba(255, 255, 255, 0.06);
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
-  --shadow-card: 0 1px 2px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.3);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.4);
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.2);
   --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.12);
+  --shadow-glow-strong: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
 
   /* Spacing */
   --section-gap: 120px;
@@ -48,7 +54,8 @@
 
   /* Fonts */
   --font-serif: 'DM Serif Display', Georgia, serif;
-  --font-sans: 'Satoshi', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Montserrat', system-ui, sans-serif;
 
   /* Transitions */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -69,7 +76,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   line-height: 1.65;
   overflow-x: hidden;
@@ -86,18 +93,18 @@ body {
 }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
-  color: var(--nit-blue);
+  background: rgba(59, 130, 246, 0.3);
+  color: #fff;
 }
 
 a {
-  color: var(--nit-blue);
+  color: var(--nit-blue-light);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--nit-blue-light);
+  color: #fff;
 }
 
 img {
@@ -120,29 +127,29 @@ img {
 }
 
 .section-label {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--nit-blue);
+  color: var(--nit-blue-light);
   margin-bottom: 20px;
   display: inline-block;
 }
 
 .section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(2.2rem, 5vw, 3.4rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: var(--text);
+  color: #fff;
   margin-bottom: 20px;
 }
 
 .section-title em {
   font-style: italic;
-  color: var(--nit-blue);
+  color: var(--nit-blue-light);
 }
 
 .section-description {
@@ -153,11 +160,45 @@ img {
   max-width: 540px;
 }
 
+/* ===== Glassmorphism card ===== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+/* ===== Section transparency — city background shows through ===== */
+.section,
+.hero {
+  position: relative;
+  background: rgba(6, 13, 31, 0.6);
+  transition: background-color 0.8s ease;
+}
+
+.section.section--active,
+.hero.section--active {
+  background: rgba(6, 13, 31, 0.9);
+}
+
+/* ===== CTA Glow ===== */
+.btn-glow {
+  position: relative;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.15);
+  transition: all 0.3s var(--ease-out);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.25), 0 0 80px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg-soft); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+::-webkit-scrollbar-track { background: rgba(6, 13, 31, 0.8); }
+::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(59, 130, 246, 0.5); }
 
 /* Responsive */
 @media (max-width: 768px) {

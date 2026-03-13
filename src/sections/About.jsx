@@ -1,6 +1,4 @@
-import { motion } from 'framer-motion';
 import { Crosshair, Eye, Diamond } from '@phosphor-icons/react';
-import { useInView } from '../hooks/useInView';
 import './About.css';
 
 const pillars = [
@@ -36,59 +34,48 @@ const focus = [
   { num: '03', title: 'Autarquias', text: 'Inserimos criatividade e inovação como princípios fundamentais para pessoas e processos traçados para atingimento das metas.' },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
-
 export default function About() {
-  const [ref, inView] = useInView({ threshold: 0.08 });
-
   return (
-    <section id="quem-somos" className="about section" ref={ref}>
+    <section id="quem-somos" className="about section">
       <div className="container">
         <div className="about__top">
           <div className="about__intro">
-            <motion.span className="section-label" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={0}>
+            <span className="section-label" data-reveal data-reveal-delay="0">
               Quem Somos
-            </motion.span>
-            <motion.h2 className="section-title" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={1}>
+            </span>
+            <h2 className="section-title" data-reveal data-reveal-delay="1">
               Hub de soluções em<br /><em>inovação & estratégia</em>
-            </motion.h2>
+            </h2>
           </div>
-          <motion.p className="section-description about__desc" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={2}>
+          <p className="section-description about__desc" data-reveal data-reveal-delay="2">
             Somos um Hub de soluções e estratégia que apoia organizações públicas, privadas e autarquias a alcançar metas e superar desafios.
             Utilizamos as ferramentas mais modernas, técnicas avançadas, serviços personalizados e os modelos de trabalho mais inovadores do mercado.
             Nosso grande diferencial é a integração entre os pilares de inovação, tecnologia, estratégia, pautada em dados.
-          </motion.p>
+          </p>
         </div>
 
         <div className="about__cards">
           {pillars.map((p, i) => (
-            <motion.div key={p.title} className="about__card" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={3 + i}>
+            <div key={p.title} className="about__card" data-reveal data-reveal-delay={3 + i}>
               <div className="about__card-icon">
                 <p.icon size={24} weight="regular" />
               </div>
               <h3 className="about__card-title">{p.title}</h3>
               <p className="about__card-text">{p.text}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <motion.div className="about__values" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={6}>
+        <div className="about__values" data-reveal data-reveal-delay="6">
           {values.map((v) => (
             <div key={v.name} className="about__value">
               <h4 className="about__value-name">{v.name}</h4>
               <p className="about__value-text">{v.text}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div className="about__focus" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={7}>
+        <div className="about__focus" data-reveal data-reveal-delay="7">
           {focus.map((f) => (
             <div key={f.num} className="about__focus-item">
               <span className="about__focus-num">{f.num}</span>
@@ -98,7 +85,7 @@ export default function About() {
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

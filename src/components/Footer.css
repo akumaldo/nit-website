@@ -1,5 +1,7 @@
 .footer {
-  background: var(--bg-dark);
+  background: rgba(6, 13, 31, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 64px 0 28px;
   position: relative;
   overflow: hidden;
@@ -42,6 +44,7 @@
 }
 
 .footer__heading {
+  font-family: var(--font-heading);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;

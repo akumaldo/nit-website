@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-import { useInView } from '../hooks/useInView';
 import './Clients.css';
 
 const logos = [
@@ -12,35 +10,24 @@ const logos = [
   { src: '/assets/clients/client-7.jpg', alt: 'Cliente 7' },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
-
 export default function Clients() {
-  const [ref, inView] = useInView({ threshold: 0.15 });
-
   return (
-    <section className="clients section" ref={ref}>
+    <section className="clients section">
       <div className="container">
-        <motion.span className="section-label" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={0}>
+        <span className="section-label" data-reveal data-reveal-delay="0">
           Clientes
-        </motion.span>
-        <motion.h2 className="section-title" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={1}>
+        </span>
+        <h2 className="section-title" data-reveal data-reveal-delay="1">
           Conheça alguns dos<br /><em>nossos clientes</em>
-        </motion.h2>
+        </h2>
 
-        <motion.div className="clients__grid" initial="hidden" animate={inView ? 'visible' : 'hidden'} variants={fadeUp} custom={2}>
+        <div className="clients__grid" data-reveal data-reveal-delay="2">
           {logos.map((logo, i) => (
             <div key={i} className="clients__item">
               <img src={logo.src} alt={logo.alt} className="clients__logo" />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

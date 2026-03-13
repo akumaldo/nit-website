@@ -5,16 +5,17 @@
   position: relative;
   overflow: hidden;
   padding: 120px 0 80px;
-  background: var(--bg-dark);
+  background: rgba(6, 13, 31, 0.6);
+  transition: background-color 0.8s ease;
+}
+
+.hero.section--active {
+  background: rgba(6, 13, 31, 0.9);
 }
 
 /* Background image */
 .hero__bg-image {
-  position: absolute;
-  inset: 0;
-  background: url('/assets/hero-bg.png') center center / cover no-repeat;
-  opacity: 0.35;
-  filter: blur(1.5px) saturate(1.2);
+  display: none;
 }
 
 /* Dark gradient overlay for text readability */
@@ -22,8 +23,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(6, 13, 31, 0.7) 0%, rgba(6, 13, 31, 0.4) 40%, rgba(6, 13, 31, 0.85) 100%),
-    linear-gradient(90deg, rgba(6, 13, 31, 0.9) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(6, 13, 31, 0.5) 0%, transparent 40%, rgba(6, 13, 31, 0.6) 100%),
+    linear-gradient(90deg, rgba(6, 13, 31, 0.7) 0%, transparent 60%);
 }
 
 /* Animated gradient orbs */
@@ -109,13 +110,16 @@
 
 /* Badge */
 .hero__badge {
+  font-family: var(--font-heading);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--nit-blue-light);
   background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -140,9 +144,9 @@
 
 /* Title */
 .hero__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: clamp(3rem, 7.5vw, 5.5rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.02em;
   color: #fff;
@@ -181,6 +185,7 @@
 
 .hero__btn-primary {
   position: relative;
+  font-family: var(--font-heading);
   font-size: 0.92rem;
   font-weight: 600;
   color: #fff;
@@ -189,13 +194,14 @@
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s var(--ease-out);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.15);
 }
 
 .hero__btn-primary:hover {
   color: #fff;
   background: var(--nit-blue-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.25), 0 8px 30px rgba(59, 130, 246, 0.3);
 }
 
 .hero__btn-shine {
@@ -214,6 +220,7 @@
 }
 
 .hero__btn-ghost {
+  font-family: var(--font-heading);
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-on-dark-muted);
@@ -255,6 +262,7 @@
 }
 
 .hero__pillar-num {
+  font-family: var(--font-heading);
   font-size: 0.68rem;
   font-weight: 700;
   color: var(--nit-blue);
@@ -268,8 +276,9 @@
 }
 
 .hero__pillar-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: 1.1rem;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.35);
   transition: color 0.3s ease;
 }
