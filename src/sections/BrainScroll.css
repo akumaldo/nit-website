@@ -1,0 +1,171 @@
+/* ===== Brain Scroll — Split Layout with Progressive Text ===== */
+
+.brain-scroll {
+  height: 250vh;
+  position: relative;
+  background: #e7ebec;
+}
+
+.brain-scroll__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* --- Text side (left) --- */
+.brain-scroll__text {
+  max-width: 480px;
+}
+
+.brain-scroll__step {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  margin-bottom: 20px;
+}
+
+.brain-scroll__step--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.brain-scroll__badge {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--nit-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.brain-scroll__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.brain-scroll__title em {
+  font-style: italic;
+  color: var(--nit-blue);
+}
+
+.brain-scroll__desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 440px;
+}
+
+.brain-scroll__desc strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.brain-scroll__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--nit-blue);
+  padding: 13px 26px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-out);
+}
+
+.brain-scroll__cta:hover {
+  background: var(--nit-blue-light);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* --- Canvas side (right) --- */
+.brain-scroll__canvas-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.brain-scroll__canvas {
+  display: block;
+  width: 100%;
+  height: 75vh;
+  border: none;
+  outline: none;
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  .brain-scroll {
+    height: 200vh;
+  }
+
+  .brain-scroll__sticky {
+    grid-template-columns: 1fr;
+    grid-template-rows: 35vh auto;
+    align-items: start;
+    padding-top: 80px;
+    gap: 20px;
+  }
+
+  .brain-scroll__canvas-wrap {
+    order: -1;
+  }
+
+  .brain-scroll__canvas {
+    height: 100%;
+  }
+
+  .brain-scroll__text {
+    max-width: 100%;
+  }
+
+  .brain-scroll__title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .brain-scroll__step {
+    margin-bottom: 16px;
+  }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .brain-scroll {
+    height: auto;
+    padding: var(--section-gap) 0;
+  }
+
+  .brain-scroll__sticky {
+    position: relative;
+    height: auto;
+    min-height: 0;
+  }
+
+  .brain-scroll__step {
+    opacity: 1;
+    transform: none;
+  }
+}

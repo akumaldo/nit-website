@@ -2,7 +2,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppFAB from './components/WhatsAppFAB';
 import Hero from './sections/Hero';
-import AIPFBanner from './sections/AIPFBanner';
+import BrainScroll from './sections/BrainScroll';
 import About from './sections/About';
 import Services from './sections/Services';
 import Clients from './sections/Clients';
@@ -14,7 +14,7 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <AIPFBanner />
+        <BrainScroll />
         <About />
         <Services />
         <Clients />
