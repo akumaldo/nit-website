@@ -1,55 +1,52 @@
-/* ===== NIT Brasil — Deep Immersive Tech ===== */
+/* ===== NIT Brasil — Editorial Corporate ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Brand */
-  --nit-navy: #060d1f;
-  --nit-navy-mid: #0c1a3a;
-  --nit-blue: #3b82f6;
-  --nit-blue-light: #60a5fa;
-  --nit-blue-muted: #6da1e8;
-  --nit-blue-wash: rgba(59, 130, 246, 0.08);
-  --nit-blue-tint: rgba(59, 130, 246, 0.05);
-  --nit-blue-glow: rgba(59, 130, 246, 0.15);
+  /* Brand — Deep navy blue */
+  --nit-navy: #0a1628;
+  --nit-navy-mid: #0f2040;
+  --nit-navy-light: #1a3460;
+  --nit-navy-accent: #2a5090;
+  --nit-navy-wash: rgba(10, 22, 40, 0.06);
+  --nit-navy-tint: rgba(10, 22, 40, 0.04);
 
   /* Surfaces */
   --bg: #ffffff;
-  --bg-soft: #f8f9fc;
-  --bg-muted: #f1f3f8;
+  --bg-soft: #f6f8fb;
+  --bg-muted: #edf0f5;
   --bg-elevated: #ffffff;
-  --bg-dark: #060d1f;
-  --bg-dark-soft: #0c1a3a;
+  --bg-dark: #0a1628;
+  --bg-dark-soft: #0f2040;
 
   /* Text */
-  --text: #0f172a;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
-  --text-accent: var(--nit-blue);
-  --text-on-dark: #e2e8f0;
-  --text-on-dark-muted: #94a3b8;
+  --text: #1a1a1a;
+  --text-secondary: #5a5a5a;
+  --text-muted: #8a8a8a;
+  --text-accent: var(--nit-navy);
+  --text-on-dark: #dce4f0;
+  --text-on-dark-muted: #8a9bba;
 
   /* Borders */
-  --border: #e2e8f0;
-  --border-light: #f1f5f9;
-  --border-dark: rgba(255, 255, 255, 0.06);
+  --border: #e0e0e0;
+  --border-light: #ebebeb;
+  --border-dark: rgba(255, 255, 255, 0.08);
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
   --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
   --shadow-card: 0 1px 2px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.05);
-  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.12);
 
   /* Spacing */
-  --section-gap: 120px;
-  --container: 1140px;
-  --pad: 28px;
+  --section-gap: 100px;
+  --container: 1200px;
+  --pad: 32px;
 
   /* Fonts */
-  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-heading: 'Montserrat', system-ui, sans-serif;
+  --font-heading: 'Inter', system-ui, sans-serif;
 
   /* Transitions */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -87,18 +84,18 @@ body {
 }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
-  color: var(--nit-blue);
+  background: rgba(10, 22, 40, 0.15);
+  color: var(--nit-navy);
 }
 
 a {
-  color: var(--nit-blue);
+  color: var(--nit-navy);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--nit-blue-light);
+  color: var(--nit-navy-light);
 }
 
 img {
@@ -121,21 +118,21 @@ img {
 }
 
 .section-label {
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--nit-blue);
-  margin-bottom: 20px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
   display: inline-block;
 }
 
 .section-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  font-weight: 700;
-  line-height: 1.15;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--text);
   margin-bottom: 20px;
@@ -143,27 +140,60 @@ img {
 
 .section-title em {
   font-style: italic;
-  color: var(--nit-blue);
+  color: var(--nit-navy);
 }
 
 .section-description {
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.75;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
   color: var(--text-secondary);
   max-width: 540px;
 }
 
-/* ===== CTA Glow ===== */
-.btn-glow {
-  position: relative;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.15);
+/* ===== CTA Button ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--nit-navy);
+  padding: 14px 28px;
+  border: 1px solid var(--nit-navy);
+  border-radius: 6px;
   transition: all 0.3s var(--ease-out);
+  cursor: pointer;
 }
 
-.btn-glow:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.25), 0 0 80px rgba(59, 130, 246, 0.1);
-  transform: translateY(-2px);
+.btn-primary:hover {
+  background: var(--nit-navy-light);
+  border-color: var(--nit-navy-light);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  background: transparent;
+  padding: 14px 28px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: all 0.3s var(--ease-out);
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  border-color: var(--nit-navy);
+  color: var(--nit-navy);
 }
 
 /* Scrollbar */
@@ -175,7 +205,7 @@ img {
 /* Responsive */
 @media (max-width: 768px) {
   :root {
-    --section-gap: 80px;
+    --section-gap: 72px;
     --pad: 20px;
   }
 }

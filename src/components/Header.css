@@ -27,46 +27,45 @@
 }
 
 .header__link {
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
   font-size: 0.88rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .header__link:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.06);
 }
 
 .header__cta {
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
   font-size: 0.85rem;
-  font-weight: 600;
-  color: #fff;
-  background: var(--nit-blue);
+  font-weight: 500;
+  color: var(--nit-navy);
+  background: #fff;
   padding: 9px 22px;
-  border-radius: 9px;
+  border-radius: 6px;
   transition: all 0.25s ease;
 }
 
 .header__cta:hover {
-  background: var(--nit-blue-light);
-  color: #fff;
+  background: var(--bg-soft);
+  color: var(--nit-navy);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);
 }
 
 /* Scrolled — white glass */
 .header--scrolled {
   padding: 14px 0;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-light);
 }
+
 
 .header--scrolled .header__link {
   color: var(--text-secondary);
@@ -74,7 +73,15 @@
 
 .header--scrolled .header__link:hover {
   color: var(--text);
-  background: var(--bg-muted);
+}
+
+.header--scrolled .header__cta {
+  background: var(--nit-navy);
+  color: #fff;
+}
+
+.header--scrolled .header__cta:hover {
+  background: var(--nit-navy-light);
 }
 
 /* Mobile toggle */
@@ -97,7 +104,7 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: rgba(6, 13, 31, 0.98);
+  background: rgba(10, 22, 40, 0.98);
   backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
@@ -112,7 +119,7 @@
 }
 
 .mobile-overlay__link {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-size: 2rem;
   color: #fff;
   padding: 8px 20px;

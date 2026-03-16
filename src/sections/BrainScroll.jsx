@@ -60,7 +60,7 @@ export default function BrainScroll() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    ctx.fillStyle = '#e7ebec';
+    ctx.fillStyle = '#edf0f5';
     ctx.fillRect(0, 0, w, h);
 
     const imgRatio = img.naturalWidth / img.naturalHeight;

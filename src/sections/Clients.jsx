@@ -12,16 +12,15 @@ const logos = [
 
 export default function Clients() {
   return (
-    <section className="clients section">
+    <section id="clientes" className="clients">
       <div className="container">
-        <span className="section-label" data-reveal data-reveal-delay="0">
-          Clientes
-        </span>
-        <h2 className="section-title" data-reveal data-reveal-delay="1">
-          Conheça alguns dos<br /><em>nossos clientes</em>
-        </h2>
+        <div className="clients__header" data-reveal data-reveal-delay="0">
+          <h2 className="clients__headline">
+            Organizações que confiam<br />na NIT Brasil
+          </h2>
+        </div>
 
-        <div className="clients__grid" data-reveal data-reveal-delay="2">
+        <div className="clients__logos" data-reveal data-reveal-delay="1">
           {logos.map((logo, i) => (
             <div key={i} className="clients__item">
               <img src={logo.src} alt={logo.alt} className="clients__logo" />

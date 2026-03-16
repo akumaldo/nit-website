@@ -4,9 +4,9 @@ import { List, X } from '@phosphor-icons/react';
 import './Header.css';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
   { label: 'Quem Somos', href: '#quem-somos' },
   { label: 'Serviços', href: '#servicos' },
+  { label: 'Clientes', href: '#clientes' },
   { label: 'Contato', href: '#contato' },
 ];
 

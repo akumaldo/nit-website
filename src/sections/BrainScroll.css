@@ -3,7 +3,7 @@
 .brain-scroll {
   height: 250vh;
   position: relative;
-  background: #e7ebec;
+  background: var(--bg-muted);
 }
 
 .brain-scroll__sticky {
@@ -37,12 +37,12 @@
 }
 
 .brain-scroll__badge {
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--nit-blue);
+  color: var(--nit-navy);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -50,9 +50,9 @@
 }
 
 .brain-scroll__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--text);
@@ -60,12 +60,12 @@
 
 .brain-scroll__title em {
   font-style: italic;
-  color: var(--nit-blue);
+  color: var(--nit-navy);
 }
 
 .brain-scroll__desc {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.75;
   color: var(--text-secondary);
   max-width: 440px;
@@ -80,21 +80,22 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
   color: #fff;
-  background: var(--nit-blue);
-  padding: 13px 26px;
-  border-radius: 12px;
+  background: var(--nit-navy);
+  padding: 14px 28px;
+  border-radius: 6px;
   text-decoration: none;
   transition: all 0.3s var(--ease-out);
+  box-shadow: none;
 }
 
 .brain-scroll__cta:hover {
-  background: var(--nit-blue-light);
+  background: var(--nit-navy-light);
   color: #fff;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 /* --- Canvas side (right) --- */
