@@ -96,6 +96,15 @@
   justify-content: center;
 }
 
+.sv-section__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 60px 40px var(--bg, #ffffff);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .sv-section__video {
   width: 100%;
   max-width: 560px;

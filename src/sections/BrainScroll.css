@@ -113,8 +113,8 @@
   height: 75vh;
   border: none;
   outline: none;
-  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 40%, transparent 100%);
-  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, black 35%, transparent 75%);
+  mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, black 35%, transparent 75%);
 }
 
 /* --- Mobile --- */
